@@ -41,9 +41,12 @@ show(): it contains the logic to getting the frequency of each word and return t
   
   $ npm --version
 
-# Getting the app
+# Getting the app and running
   Open Command Line: 
-  - git clone:
-  - cd 
+  - git clone https://github.com/Ironnatron/React-App.git
+  - cd React-App
+  - unrar x react_app.rar
+  - cd react_app
+  - npm start
 
 
