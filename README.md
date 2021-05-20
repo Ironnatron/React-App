@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+# Word Frequency Counter
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A webapp that show the top N occurring words with their frequency in  a given text.
 
-## Available Scripts
+# Technologies
 
-In the project directory, you can run:
+Front-end : React
 
-### `npm start`
+npm Modules :
+axios (for web scrapping)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# Components
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+fetch():
+- This function is to get data in form of text from https://raw.githubusercontent.com/invictustech/test/main/README.md
+- axios request https://raw.githubusercontent.com/invictustech/test/main/README.md page and traverse DOM to retrive the data and return the data 
 
-### `npm test`
+Form(): It is the main and essential component of the web app uses the useEffect, useState hooks
+- useEffect hook calls the fetchData() every time page is loaded and stores the data in variable
+- JSX element form is used to get the input from user
+- event handler (handleSubmit and handleChange ) runs every time user enter the input value and stores the value in a variable
+ 
+show(): it contains the logic to getting the frequency of each word and return the top N occuring words
+- First clean the text (remove special character and numbers) 
+- Splits the text into array of words
+- Counting the occurrence of each words and sorting in decreasing order
+- Finally return the top N occurring words 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Working 
+-  When the page is loaded the useEffect hook calls the fetchData function which further fetch the data
+-  Now user enter's the input and hit submit button. The event handler calls the useState hook and store the user input in a variable 
+-  After getting the user input show() function does its work and execute the logic to return the result and store it in a variable which is then printed using 
+   JSX element
+   
+# Pre-requisite
+  Before running the app, install
+  - Node : https://nodejs.org/en/download/
+  To check whether Node is installed properly
+  
+  $ Node --version
+  
+  $ npm --version
 
-### `npm run build`
+# Getting the app
+  Open Command Line: 
+  - git clone:
+  - cd 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
